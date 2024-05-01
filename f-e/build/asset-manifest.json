@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0549ede7.chunk.css",
+    "main.js": "/static/js/main.af38e451.chunk.js",
+    "main.js.map": "/static/js/main.af38e451.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ec662c43.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ec662c43.js.map",
+    "static/css/2.4982ff03.chunk.css": "/static/css/2.4982ff03.chunk.css",
+    "static/js/2.b82fba2b.chunk.js": "/static/js/2.b82fba2b.chunk.js",
+    "static/js/2.b82fba2b.chunk.js.map": "/static/js/2.b82fba2b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.4982ff03.chunk.css.map": "/static/css/2.4982ff03.chunk.css.map",
+    "static/css/main.0549ede7.chunk.css.map": "/static/css/main.0549ede7.chunk.css.map",
+    "static/js/2.b82fba2b.chunk.js.LICENSE.txt": "/static/js/2.b82fba2b.chunk.js.LICENSE.txt",
+    "static/media/HomePage.scss": "/static/media/suc-khoe-tam-than.3015db1d.jpg",
+    "static/media/SliderBG.scss": "/static/media/163557-dat-lich-cham-soc-wecare247.3c70c5de.png",
+    "static/media/VideoDoctor.scss": "/static/media/vtv1.44154b3b.png",
+    "static/media/HomeFooter.scss": "/static/media/add.98dd25c6.jpg",
+    "static/media/DetailClinic.scss": "/static/media/background2.a95dc86b.png",
+    "static/media/HomeHeader.scss": "/static/media/bookingcare-cover-2.e41d94c3.jpg",
+    "static/media/styles.scss": "/static/media/fa-solid-900.d279d01b.svg",
+    "static/media/sieu-am-thai.d50cbd1c.jpg": "/static/media/sieu-am-thai.d50cbd1c.jpg",
+    "static/media/slick-theme.css": "/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec662c43.js",
+    "static/css/2.4982ff03.chunk.css",
+    "static/js/2.b82fba2b.chunk.js",
+    "static/css/main.0549ede7.chunk.css",
+    "static/js/main.af38e451.chunk.js"
+  ]
+}
