@@ -57,8 +57,6 @@ const DetailsDefault  = (props) => {
                         </div>
                     
                             <div className="container">
-                            
-
 
                                 {arrDetails && arrDetails.length > 0 &&
                                 

@@ -43,10 +43,10 @@ class HomeHeader extends Component {
                 <div className="grid wide">
                     <div className="row center">
                         <div className="col l-4 c-8 ">
-                            <div className="left-content">
+                            <div className="left-content"  onClick={() => this.handleImgLogo()}>
                                
                                 <div className="header-logo" 
-                                    onClick={() => this.handleImgLogo()}
+                                   
                                 ></div>
                                 <span className='name-logo'>Booking Care</span>
 

@@ -193,7 +193,7 @@
 
 
 .slick-prev {
-    display: block !important;
+    display: block;
     background: rgb(181, 231, 237) !important;
     left: -16px !important;
     top: 45% !important;
@@ -205,7 +205,7 @@
 }
 
 .slick-next {
-    display: block !important;
+    display: block;
     right: -16px !important;
     top: 45% !important;
     z-index: 1000 !important;

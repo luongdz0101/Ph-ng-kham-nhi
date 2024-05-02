@@ -53,13 +53,21 @@
         width: 95% !important;
     }
 
+    .slick-prev {
+        display: none !important;
+    }
+
+    .slick-next {
+        display: none !important;
+    }
+
     .bg {
         height: 600px;
     }
 
     .specialty-content__body .specialty-content .specialty-content__img.img_doctor {
-        width: 100% !important;
-        height: 358px !important;
+        width: 80% !important;
+        height: 325px !important;
         background-size: contain !important;
     }
 
