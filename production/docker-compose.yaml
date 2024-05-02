@@ -19,7 +19,7 @@ services:
     environment:
       - DB_PORT=3306
       - DB_HOST=database-mysql
-      - URL_REACT=http://localhost
+      - URL_REACT=http://103.72.98.200
       # - DB_HOST=host.docker.internal
     ports:
       - 8080:8080
