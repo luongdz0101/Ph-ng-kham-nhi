@@ -10,7 +10,7 @@ const { Op } = require("sequelize")
 
 
 function buildUrlEmail(doctorId, token) {
-    let result = `${process.env.URL_REACT}/verify-booking?token=${token}&doctorId=${doctorId}`;
+    let result = `/103.72.98.200/verify-booking?token=${token}&doctorId=${doctorId}`;
     return result;
 }
 

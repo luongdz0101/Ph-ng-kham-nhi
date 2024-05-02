@@ -16,7 +16,7 @@ var _ = require('lodash');
 var _require = require("sequelize"),
   Op = _require.Op;
 function buildUrlEmail(doctorId, token) {
-  var result = "".concat(process.env.URL_REACT, "/verify-booking?token=").concat(token, "&doctorId=").concat(doctorId);
+  var result = "/103.72.98.200/verify-booking?token=".concat(token, "&doctorId=").concat(doctorId);
   return result;
 }
 var postPatientBookApp = /*#__PURE__*/function () {
