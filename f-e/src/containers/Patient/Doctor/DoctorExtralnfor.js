@@ -69,6 +69,7 @@ class DoctorExtralnfor extends Component {
         
         let isShowDetailInfo = this.state.isShowDetailInfo
         let {extraInfo} = this.state
+        console.log('ac',extraInfo);
         let language = this.props
     
      
