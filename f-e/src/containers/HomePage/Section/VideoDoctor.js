@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
+
 
 import './ForYou.scss';
 import '../../gird/gird.scss';
@@ -16,7 +18,8 @@ class VideoDoctor extends Component {
             <div className="video-doctor-body bg mt-4">
                 <div className="video-header">
                     <div className="video-header__text">
-                        Truyền thông nói về Booking Care
+                        <FormattedMessage id ="home-page.tt"/>
+                        
                     </div>
                 </div>
                 <div className="video__footer ">

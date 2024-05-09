@@ -7,6 +7,8 @@ import moment from 'moment';
 import { languages } from '../../../utils';
 import { getScheduleDoctor } from '../../../services/userServices';
 import BookingModal from './modal/BookingModal';
+import { FormattedMessage } from 'react-intl';
+
 
 
 
@@ -195,7 +197,7 @@ class doctorSchedule extends Component {
                                     )
                                 })
                                 :
-                                <div className="text-no-schedule">Không có lịch hẹn trông thời gian này, vui lòng chọn thời gian khác !</div>
+                                <div className="text-no-schedule"><FormattedMessage id ="home-page.kh"/></div>
                             
                             }
                                         

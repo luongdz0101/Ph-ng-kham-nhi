@@ -7,6 +7,7 @@ import InputForm from '../../../components/InputFrom/InputForm';
 import { createNewQuestion } from '../../../services/userServices';
 import { toast } from 'react-toastify';
 import {  CommonUtils } from '../../../utils';
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -92,7 +93,7 @@ const PatientAsked = (props) => {
                     <div className="container">
                         <div className="row body-asked">
                             <div className="col-6 form-group">
-                                <label htmlFor="">Nguyễn Văn A</label>
+                                <label htmlFor=""><FormattedMessage id ="manage-user.name"/></label>
                                     <InputForm 
                                         name= 'name'
                                         placeholder='Nhập họ tên'
@@ -103,7 +104,7 @@ const PatientAsked = (props) => {
                                 />
                             </div>
                             <div className="col-6 form-group">
-                                <label htmlFor="">Số điện thoại</label>
+                                <label htmlFor=""><FormattedMessage id ="manage-user.phone-number"/></label>
                                     <InputForm 
                                         name= 'phoneNumber'
                                         placeholder='+84....'
@@ -114,7 +115,7 @@ const PatientAsked = (props) => {
                                 />
                             </div>
                             <div className="col-6 form-group">
-                                <label htmlFor="">Địa trỉ email</label>
+                                <label htmlFor=""><FormattedMessage id ="manage-user.email"/></label>
                                     <InputForm 
                                         name= 'email'
                                         placeholder='email@gmail.com'
@@ -125,7 +126,7 @@ const PatientAsked = (props) => {
                                 />
                             </div>
                             <div className="col-6 form-group">
-                                <label htmlFor="">Địa trỉ liên hệ</label>
+                                <label htmlFor=""><FormattedMessage id ="manage-user.address"/></label>
                                     <InputForm 
                                         name= 'address'
                                         placeholder='Tên thành phố của bạn'
@@ -136,7 +137,7 @@ const PatientAsked = (props) => {
                                 />
                             </div>
                             <div className="col-12 form-group">
-                                <label htmlFor="">Câu hỏi</label>
+                                <label htmlFor=""><FormattedMessage id ="manage-user.question"/></label>
                                      <textarea className="form-control textarea-body" rows="6"
                                             onChange={ (e) => setTextarea(e.target.value)}
                                             name='asked'
@@ -154,7 +155,10 @@ const PatientAsked = (props) => {
                                             onChange={(event) => handleOnChangeImg(event)}
 
                                         />
-                                        <label htmlFor="preview-img" className='preview-img'>Tải ảnh <i className="fas fa-upload"></i> </label>
+                                        <label htmlFor="preview-img" className='preview-img'>
+                                            <span className='taianh'> <FormattedMessage id ="manage-user.download-image"/></span>
+                                            <i className="fas fa-upload"></i> 
+                                        </label>
 
                                         <div className="preview-imagee"
                                             style={{backgroundImage: `url(${previewImgURL})`}}
@@ -170,7 +174,7 @@ const PatientAsked = (props) => {
                             <div className="col-10">
                                 <button type="button" className="btn btn-modal__one btn-primary "
                                     onClick={handleSaveData}
-                                >Gửi câu hỏi tới bác sĩ</button>
+                                ><FormattedMessage id ="manage-user.gch"/></button>
                             </div>
 
                             

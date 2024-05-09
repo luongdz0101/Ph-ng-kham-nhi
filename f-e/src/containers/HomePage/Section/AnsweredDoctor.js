@@ -30,7 +30,7 @@ class AnsweredDoctor extends Component {
                         <div className="row center">
                             
                             <div className="col-8 header__title--body">
-                                    <div className="specialty-header__title">Bác sĩ hỏi đáp</div>
+                                    <div className="specialty-header__title"><FormattedMessage id ="home-page.asked-answered"/></div>
                             </div>
                             <div className="col-4 header__button--body">
                                 <button type="button" className="btn btn-info specialty-header__button"
@@ -52,14 +52,15 @@ class AnsweredDoctor extends Component {
                                         <div className='specialty-content'> 
                                             <div className="specialty-content__img img_answered-1"></div>
                                             
-                                            <span className='specialty-content__text answered-text'>Bệnh nhân đặt câu hỏi</span>
+                              
+                                            <span className='specialty-content__text answered-text'>   <FormattedMessage id ="home-page.bnhd"/></span>
                                         </div>
                                     </div>
                                     <div className="specialty-content__body " onClick={() => this.handleDetailerAsKAnswer()}>
                                         <div className='specialty-content'> 
                                             <div className="specialty-content__img img_answered"></div>
                                             
-                                            <span className='specialty-content__text answered-text'>Cảm nang hỏi đáp</span>
+                                            <span className='specialty-content__text answered-text'><FormattedMessage id ="home-page.cnhd"/></span>
                                         </div>
                                     </div>
                                 </Slider>

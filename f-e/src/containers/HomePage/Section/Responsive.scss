@@ -8,7 +8,9 @@
 /* Mobile: width >= 1024px */
 
 @media only screen and (max-width: 46.1875em) {
-
+    .taianh {
+        display: none;
+    }
 
     .display-none-mb {
         display: none !important;
@@ -33,6 +35,22 @@
     .specialty-content__body .specialty-content .specialty-content__img.img_doctor {
         height: 255px !important;
         background-size: contain !important;
+    }
+
+    .time-content {
+        text-align: center;
+    }
+
+    .detail-clinic__dow {
+        display: none;
+    }
+
+    .detail-clinic__text-up {
+        display: none;
+    }
+
+    .detail-clinic__img {
+        width: 293%;
     }
 }
 
@@ -67,7 +85,7 @@
 
     .specialty-content__body .specialty-content .specialty-content__img.img_doctor {
         width: 80% !important;
-        height: 325px !important;
+        height: 314px !important;
         background-size: contain !important;
     }
 
@@ -122,6 +140,14 @@
 
     .detail-container__one .container__one-left {
         height: 56px !important;
+    }
+
+    .home-header-container .center .header-logo {
+        height: 50px;
+    }
+
+    .footer-container .footer-content .footer-content__left .left-content .content__left-img {
+        height: 54px;
     }
 }
 

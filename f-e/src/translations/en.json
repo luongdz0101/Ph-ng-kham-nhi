@@ -57,13 +57,34 @@
         "position": "Position",
         "img": "Image",
         "save": "Save user",
-        "edit": "Edit user"
+        "edit": "Edit user",
+        "name": "First and last name",
+        "question": "Question",
+        "download-image": "Load IMG",
+        "gch": "Send questions to your doctor",
+        "ldk": "Reason for examination",
+        "ns": "Date of birth",
+        "gt": "Sex",
+        "xn": "Confirm",
+        "huy": "Cancel"
     },
     "home-page": {
         "specialist": "Specialist",
         "see-more": "See More",
         "health-facilities": "Health Facilities",
-        "outstanding-doctor": "Doctor featured last week"
+        "outstanding-doctor": "Doctor featured last week",
+        "asked-answered": "Doctor asked and answered",
+        "tt": "Media talks about Booking Care",
+        "healthy-for-life": "Healthy for life",
+        "pkn": "Pediatric clinic Hoang Gia",
+        "dt": "Content sponsorship partners",
+        "bt": "Sponsor the medical content section",
+        "btcm": "Sponsor the content section “Living and showing off for a lifetime”",
+        "cbc": "Copy booking care by @2024",
+        "kh": "This timer is not available, please choose another time!",
+        "gk": "Examination Price:",
+        "bnhd": "The patient asks",
+        "cnhd": "Q&A handbook"
     },
     "manage-schedule": {
         "title": "Schema management",

@@ -44,7 +44,7 @@ class DefaultClass extends Component {
                <div className="container">
                     
                     <div className="row mt">
-                        <div className="col-5">
+                        <div className="col-5 ">
 
                         {detailClinic && detailClinic.image && 
                             <div className="detail-clinic__img"
@@ -58,7 +58,7 @@ class DefaultClass extends Component {
                            
                         </div>
 
-                        <div className="col-7">
+                        <div className="col-7 ">
                                 <div className="detail-clinic__body-text">
                                 {detailClinic && detailClinic.name && 
                                 <div className="detail-clinic__text-up">

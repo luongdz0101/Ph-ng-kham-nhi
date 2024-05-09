@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.2f860367.chunk.css",
-    "main.js": "/static/js/main.34fcbaeb.chunk.js",
-    "main.js.map": "/static/js/main.34fcbaeb.chunk.js.map",
+    "main.css": "/static/css/main.c7bcb7c9.chunk.css",
+    "main.js": "/static/js/main.c811d721.chunk.js",
+    "main.js.map": "/static/js/main.c811d721.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ec662c43.js",
     "runtime-main.js.map": "/static/js/runtime-main.ec662c43.js.map",
     "static/css/2.4982ff03.chunk.css": "/static/css/2.4982ff03.chunk.css",
-    "static/js/2.b82fba2b.chunk.js": "/static/js/2.b82fba2b.chunk.js",
-    "static/js/2.b82fba2b.chunk.js.map": "/static/js/2.b82fba2b.chunk.js.map",
+    "static/js/2.c237ffc1.chunk.js": "/static/js/2.c237ffc1.chunk.js",
+    "static/js/2.c237ffc1.chunk.js.map": "/static/js/2.c237ffc1.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.4982ff03.chunk.css.map": "/static/css/2.4982ff03.chunk.css.map",
-    "static/css/main.2f860367.chunk.css.map": "/static/css/main.2f860367.chunk.css.map",
-    "static/js/2.b82fba2b.chunk.js.LICENSE.txt": "/static/js/2.b82fba2b.chunk.js.LICENSE.txt",
+    "static/css/main.c7bcb7c9.chunk.css.map": "/static/css/main.c7bcb7c9.chunk.css.map",
+    "static/js/2.c237ffc1.chunk.js.LICENSE.txt": "/static/js/2.c237ffc1.chunk.js.LICENSE.txt",
     "static/media/HomePage.scss": "/static/media/suc-khoe-tam-than.3015db1d.jpg",
     "static/media/SliderBG.scss": "/static/media/163557-dat-lich-cham-soc-wecare247.3c70c5de.png",
     "static/media/VideoDoctor.scss": "/static/media/vtv1.44154b3b.png",
@@ -25,8 +25,8 @@
   "entrypoints": [
     "static/js/runtime-main.ec662c43.js",
     "static/css/2.4982ff03.chunk.css",
-    "static/js/2.b82fba2b.chunk.js",
-    "static/css/main.2f860367.chunk.css",
-    "static/js/main.34fcbaeb.chunk.js"
+    "static/js/2.c237ffc1.chunk.js",
+    "static/css/main.c7bcb7c9.chunk.css",
+    "static/js/main.c811d721.chunk.js"
   ]
 }

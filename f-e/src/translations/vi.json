@@ -57,13 +57,34 @@
         "position": "Chức danh",
         "img": "Ảnh đại diện",
         "save": "Lưu dữ liệu",
-        "edit": "Sửa dữ liệu"
+        "edit": "Sửa dữ liệu",
+        "name": "Họ và tên",
+        "question": "Câu hỏi",
+        "download-image": "Tải ảnh",
+        "gch": "Gửi câu hỏi tới bác sĩ",
+        "ldk": "Lý do khám",
+        "ns": "Ngày sinh",
+        "gt": "Giới tính",
+        "xn": "Confirm",
+        "huy": "Cancel"
     },
     "home-page": {
         "specialist": "Chuyên Khoa",
         "see-more": "Xem Thêm",
         "health-facilities": "Cơ sở y tế",
-        "outstanding-doctor": "Danh sách bác sĩ"
+        "outstanding-doctor": "Danh sách bác sĩ",
+        "asked-answered": "Bác sĩ hỏi đáp",
+        "tt": "Truyền thông nói về Booking Care",
+        "healthy-for-life": "Sống khoẻ mỗi ngày",
+        "pkn": "Phòng khám nhi khoa Hoàng Gia",
+        "dt": "Đối tác bảo trợ nội dung",
+        "bt": "Bảo trợ chuyên mục nội dung y khoa nhỉ",
+        "btcm": "Bảo trợ chuyên mục nội dung “Sống khoe suốt đời”",
+        "cbc": "Sao chép chăm sóc đặt phòng bởi @2024",
+        "kh": "Không có lịch hẹn trông thời gian này, vui lòng chọn thời gian khác !",
+        "gk": "Giá Khám:",
+        "bnhd": "Bệnh nhân đặt câu hỏi",
+        "cnhd": "Cẩm nang hỏi đáp"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh",

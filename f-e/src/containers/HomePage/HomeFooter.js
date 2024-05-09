@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 
 import './HomeFooter.scss';
 import '../gird/gird.scss';
@@ -32,7 +33,7 @@ class HomeFooter extends Component {
                                         </div>
                                             <div className="content__left-address">
                                         <div className="img-check">203 - Hoàng Gia- Tổ 6- Tân Thịnh- Thái Nguyên</div>
-                                            <div className="text-map">Phòng khám nhi khoa Hoàng Gia.</div>
+                                            <div className="text-map"><FormattedMessage id ="home-page.pkn"/></div>
                                             <div className="text-map">Hotline: 0972385115</div>
                                         </div>
                                         <div className="content__left-dk"></div>
@@ -42,20 +43,21 @@ class HomeFooter extends Component {
                                 <div className="col l-6  c-12">
                                     <div className="footer-content-right">
                                         <div className="content-right__header-body">
-                                            Đối tác bảo trợ nội dung
+                                            <FormattedMessage id ="home-page.dt"/>
                                         </div>
                                         <div className="content-right__header">
-                                            Phòng khám nhi khoa Hoàng Gia
+                                            <FormattedMessage id ="home-page.pkn"/>
                                         </div>
                                         <div className="content-right__footer">
-                                            Bảo trợ chuyên mục nội dung y khoa nhỉ
+                                             <FormattedMessage id ="home-page.bt"/>
                                         </div>
 
                                         <div className="content-right__header">
                                             Vinmec 
                                         </div>
                                         <div className="content-right__footer">
-                                            Bảo trợ chuyên mục nội dung “Sống khoe suốt đời”
+                                             <FormattedMessage id ="home-page.btcm"/>
+                                            
                                         </div>
 
                                     </div>
@@ -70,7 +72,7 @@ class HomeFooter extends Component {
                         <div className="footer-end-content">
                             <div className="row footer-center">
                                 <div className="col l-6 c-12 m-6">
-                                     <div className="text-footer-end">Copy booking care by @2023</div>
+                                     <div className="text-footer-end"> <FormattedMessage id ="home-page.cbc"/></div>
                                 </div>
         
                                 <div className="col l-4 c-0 m-6">

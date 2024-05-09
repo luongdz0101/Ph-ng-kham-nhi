@@ -13,6 +13,7 @@ import { Toast, toast } from 'react-toastify';
 import NumberFormat from 'react-number-format';
 import LoadingOverlay from 'react-loading-overlay';
 import moment from 'moment';
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -258,7 +259,7 @@ class BookingModal extends Component {
                             <div className="content mt-4">
                                 <div className="row">
                                     <div className="col-6 form-group">
-                                        <label htmlFor="">Họ tên</label>
+                                        <label htmlFor=""><FormattedMessage id ="manage-user.name"/></label>
                                         <input type="text"  className='form-control'
                                             value={this.state.fullName}
                                             onChange={(event) =>this.handleOnChangeInput(event, 'fullName')}
@@ -267,7 +268,7 @@ class BookingModal extends Component {
                                         />
                                     </div>
                                     <div className="col-6 form-group">
-                                        <label htmlFor="">Số điện thoại</label>
+                                        <label htmlFor=""><FormattedMessage id ="manage-user.phone-number"/></label>
                                         <input type="text"  className='form-control'
                                             value={this.state.phoneNumber}
                                             onChange={(event) =>this.handleOnChangeInput(event, 'phoneNumber')}
@@ -275,7 +276,7 @@ class BookingModal extends Component {
                                         />
                                     </div>
                                     <div className="col-6 form-group">
-                                        <label htmlFor="">Địa chỉ email</label>
+                                        <label htmlFor=""><FormattedMessage id ="manage-user.email"/></label>
                                         <input type="text"  className='form-control'
                                             value={this.state.email}
                                             onChange={(event) =>this.handleOnChangeInput(event, 'email')}
@@ -284,7 +285,7 @@ class BookingModal extends Component {
                                         />
                                     </div>
                                     <div className="col-6 form-group">
-                                        <label htmlFor="">Địa liên hệ</label>
+                                        <label htmlFor=""><FormattedMessage id ="manage-user.address"/></label>
                                         <input type="text"  className='form-control'
                                             value={this.state.address}
                                             onChange={(event) =>this.handleOnChangeInput(event, 'address')}
@@ -293,7 +294,7 @@ class BookingModal extends Component {
                                         />
                                     </div>
                                     <div className="col-12 form-group">
-                                        <label htmlFor="">Lý do khám</label>
+                                        <label htmlFor=""><FormattedMessage id ="manage-user.ldk"/></label>
                                         <textarea className="form-control textarea-body" rows="4"
                         
                                             onChange={(event) => this.handleOnChangeInput(event, 'reason')}
@@ -304,7 +305,7 @@ class BookingModal extends Component {
                                         </textarea>
                                     </div>
                                     <div className="col-6 form-group">
-                                        <label htmlFor="">Ngày sinh</label>
+                                        <label htmlFor=""><FormattedMessage id ="manage-user.ns"/></label>
                                         <DatePicker 
                                             onChange={this.handleOnChangeDatePicket}
                                             className= 'form-control'
@@ -316,7 +317,7 @@ class BookingModal extends Component {
                                         />
                                     </div>
                                     <div className="col-6 form-group">
-                                        <label htmlFor="">Chọn giới tính</label>
+                                        <label htmlFor=""><FormattedMessage id ="manage-user.gt"/></label>
                                         <select className="form-control"
                                  
                                             onChange={(event) => {this.handleOnChangeInput(event, 'gender')}}
@@ -346,10 +347,10 @@ class BookingModal extends Component {
                             onClick={() => this.handleConfirmBooking()}
                             
                             
-                            >Xác nhận </button>
+                            ><FormattedMessage id ="manage-user.xn"/> </button>
                             <button type="button" className="btn btn-modal__two btn-danger" 
                                 onClick={closeModalBooking}
-                            >Huỷ</button>
+                            ><FormattedMessage id ="manage-user.huy"/></button>
                         </div>
                    </div>
                  

@@ -5,6 +5,7 @@ import './DoctorExtralnfor.scss'
 import { languages } from '../../../utils';
 
 import {getExtraInfoById} from '../../../services/userServices'
+import { FormattedMessage } from 'react-intl';
 
 import * as actions from '../../../store/actions'
 
@@ -24,7 +25,11 @@ class DoctorExtralnfor extends Component {
 
     async componentDidMount(){
         if(this.props.doctorIdFromParent){
-            this.props.fetchExtraDoctor(this.props.doctorIdFromParent);
+            let data = await getExtraInfoById(this.props.doctorIdFromParent);
+          if(data && data.errCode == 0 )
+            this.setState({
+                extraInfo : data.data
+            })
         }
 
         
@@ -36,22 +41,15 @@ class DoctorExtralnfor extends Component {
     async componentDidUpdate(prevProps, prevState, snapshot){
         
         if(this.props.doctorIdFromParent !== prevProps.doctorIdFromParent){
-          
-           
-  
-
-        this.props.fetchExtraDoctor(this.props.doctorIdFromParent);
-          
-     
-
+          let data = await getExtraInfoById(this.props.doctorIdFromParent);
+          if(data && data.errCode == 0 )
+            this.setState({
+                   extraInfo : data.data
+            })
 
         
         }
-        if(prevProps.fetchExtra !== this.props.fetchExtra){
-            this.setState({
-                extraInfo: this.props.fetchExtra
-            })
-        }
+        
     }
 
    
@@ -69,7 +67,8 @@ class DoctorExtralnfor extends Component {
         
         let isShowDetailInfo = this.state.isShowDetailInfo
         let {extraInfo} = this.state
-        console.log('ac',extraInfo);
+        console.log(this.props.doctorIdFromParent)
+        console.log(this.state);
         let language = this.props
     
      
@@ -91,7 +90,7 @@ class DoctorExtralnfor extends Component {
                     
                         {isShowDetailInfo === false && 
                             <div className="extra-info__dow--container">
-                                Giá Khám: 
+                                <FormattedMessage id ="home-page.gk"/>
                             
                                   <span className='dow--price'>
                                   <NumberFormat

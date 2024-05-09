@@ -111,7 +111,7 @@ class RemedyModal extends Component {
                size='xl'
               
                >
-                <ModalHeader toggle={closeModal}>Gửi Hoá đơn khám bệnh thành công</ModalHeader>
+                <ModalHeader toggle={closeModal}>Thống báo tới bênh nhân</ModalHeader>
                 <ModalBody>
                     <div className="row">
                         <div className="col-6 form-group">

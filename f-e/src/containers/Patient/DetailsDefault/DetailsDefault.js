@@ -42,73 +42,70 @@ const DetailsDefault  = (props) => {
            
             <React.Fragment>
           
-                <div className="link-container mt  mr-t">
-                        <div className="container">
-
-            
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="link-text">{title}</div>
+                <div className="link-container mr-t mt">
+                    <div className="container">
+                        <div className="grid wide">
+                            <div className="row">
+                                <div className="col l-12">
+                                    <div className="link-text">{title}</div>
+                                </div>
                             </div>
-
-                            
-                            
                         </div>
                         </div>
-                    
-                            <div className="container">
+                           
+        
 
                                 {arrDetails && arrDetails.length > 0 &&
                                 
                                 arrDetails.map((item, index) => {
                                     return (
-                                    
+                                    <div className="grid wide">
                                         
-                                    <div className="row mt mt-child"
-                                    
-                                        onClick={() => modal === true ? handleOnClick(item) : handleViewDetail(item)}
-                                    >
+                                        <div className="row mt mt-child"
+                                        
+                                            onClick={() => modal === true ? handleOnClick(item) : handleViewDetail(item)}
+                                        >
+                                                
+                                                    <div className="col l-2 c-4">
+
+                                                    
+                                                        <div className="detail__img "
+
                                             
-                                                <div className="col-2 ">
 
-                                                
-                                                    <div className="detail__img "
-
-                                        
-
-                                                    style={{backgroundImage: `url(${item.image})`,
-                                                
-                                                    backgroundSize : setSizeImg === true ? 'cover' : 'contain'
-                                                
-                                                    }}
+                                                        style={{backgroundImage: `url(${item.image})`,
                                                     
-                                                    >
+                                                        backgroundSize : setSizeImg === true ? 'cover' : 'contain'
+                                                    
+                                                        }}
+                                                        
+                                                        >
 
+                                                        </div>
+                                            
+                                                    
                                                     </div>
+
+                                                    <div className="col l-10 c-8">
+                                                            <div className="detail__body-text">
+                                                        
+                                                            <div className="detail__text-up">
+
+                                                                {
+                                                                    setQuestion === true ? item.question : item.name
+                                                                }
+                                                            
+                                                            </div>
+                                                        
+                                                            {/* <div className="detail-clinic__dow">
+                                                                {item.address}
+                                                            </div> */}
+                                                        
+                                                            </div>
+                                                    </div>
+                                        </div>
                                         
-                                                
-                                                </div>
-
-                                                <div className="col-10 ">
-                                                        <div className="detail__body-text">
-                                                    
-                                                        <div className="detail__text-up">
-
-                                                            {
-                                                                setQuestion === true ? item.question : item.name
-                                                            }
-                                                          
-                                                        </div>
-                                                    
-                                                        {/* <div className="detail-clinic__dow">
-                                                            {item.address}
-                                                        </div> */}
-                                                    
-                                                        </div>
-                                                </div>
                                     </div>
-                                        
-                                        
                                 
 
                                     )
@@ -119,7 +116,7 @@ const DetailsDefault  = (props) => {
                                 }
                                 
                             
-                        </div>
+                       
                         
                 </div>
 
