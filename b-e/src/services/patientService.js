@@ -35,7 +35,13 @@ let  postPatientBookApp = async(data) => {
                     redirectLink: buildUrlEmail(data.doctorId,token)
                 });
 
-             
+                let countBooking = await db.Booking.count({
+                    where: {
+                        timeType: "T1"
+                    }, 
+                        
+                 })
+                 console.log("test count",countBooking)
 
                 let user = await db.User.findOrCreate({
                     where: {
@@ -51,7 +57,7 @@ let  postPatientBookApp = async(data) => {
                     }
                 })
 
-                if(user && user[0]){
+                if(countBooking >= 3 && user && user[0]){
                     await db.Booking.findOrCreate({
 
                         where: {
@@ -65,18 +71,41 @@ let  postPatientBookApp = async(data) => {
                             timeType: data.timeType,
                             token: token
                         }
-
-
-                        
-
-                        
+  
                         
                     })
+                    resolve({
+                        errCode: 2,
+                        errMessage: 'Tim full'
+                    })
+                } else if(countBooking < 3 && user && user[0]){
+                    await db.Booking.findOrCreate({
+
+                        where: {
+                            patientId: user[0].id
+                        },
+                        defaults: {
+                            statusId: 'S1',
+                            doctorId: data.doctorId,
+                            patientId: user[0].id,
+                            date: data.date,
+                            timeType: data.timeType,
+                            token: token
+                        }
+  
+                        
+                    })
+                    resolve({
+                        errCode: 0,
+                        errMessage: 'Đặt phòng thành công'
+                    })
+                } else {
+                     resolve({
+                        errCode: 1,
+                        errMessage: 'Đặt phòng thất bại'
+                    })
                 }
-                resolve({
-                    errCode: 0,
-                    errMessage: 'Post success'
-                })
+                
 
             }
            

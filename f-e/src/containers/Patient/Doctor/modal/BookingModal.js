@@ -133,7 +133,15 @@ class BookingModal extends Component {
                 })
                 toast.success('Đạt lịch thành công');
                 this.props.closeModalBooking();
-            }else{
+            } else if(res && res.errCode === 2){
+                this.setState({
+                    isShowLoading: false
+                })
+                toast.error('Đã đủ người trong khoảng thời gian này. Bệnh nhân vui lòng chọn thời gian phù hợp khác!');
+                this.props.closeModalBooking();
+            } 
+            
+            else {
                 this.setState({
                     isShowLoading: false
                 })

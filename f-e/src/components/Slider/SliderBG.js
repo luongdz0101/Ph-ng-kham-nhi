@@ -40,7 +40,7 @@ const SliderBG = () => {
                                             
                 </div>
                 <div className='slider-content'> 
-                    <div className="img-slider-2"></div>                      
+                    <div className="img-slider-3"></div>                      
                 </div>
                 </Slider>
             </div>

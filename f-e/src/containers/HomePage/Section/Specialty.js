@@ -11,7 +11,7 @@ class Specialty extends Component {
     constructor(props){
         super(props);
         this.state = {
-          
+
             dataSpecialty: []
         }
     }
@@ -45,7 +45,80 @@ class Specialty extends Component {
         this.props.history.push(`/header-specialty`)
     }
 
+    
     render() {
+           var settings_3 = {
+            dots: false,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            initialSlide: 0,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 820,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  initialSlide: 2
+                }
+              },
+              {
+                breakpoint: 920,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  initialSlide: 3
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  initialSlide: 2
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  initialSlide: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1
+                }
+              },
+              {
+                breakpoint: 420,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              },
+              {
+                breakpoint: 400,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+            ]
+          };
      
         let dataSpecialty = this.state.dataSpecialty;
         return (
@@ -69,10 +142,10 @@ class Specialty extends Component {
                     
                 </div>
                 <div className="grid wide ">
-                        <Slider {...this.props.settings}>
+                    <Slider {...settings_3}>
+                            
                         {dataSpecialty && dataSpecialty.length > 0 && dataSpecialty.map((item, index) => {          
                         return(
-                            
                             <div className="specialty-content__body">
                                 <div className='specialty-content height-specialty' 
                                 
@@ -85,7 +158,7 @@ class Specialty extends Component {
                                     
                                     <span className='specialty-content__text'>{item.name}</span>
                                 </div>
-                        </div>
+                            </div>
                         )
 
 

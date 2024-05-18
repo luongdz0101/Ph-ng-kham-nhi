@@ -36,7 +36,6 @@ class HomePage extends Component {
             slidesToScroll: 1,
         
             responsive: [
-             
               {
                 breakpoint: 1024,
                 settings: {
@@ -105,14 +104,17 @@ class HomePage extends Component {
         return (
             < div>
                 <HomeHeader isShowBanner = {true}/>
-                <Specialty 
-                settings = {settings} />
-
-                 <MedicalFacility
-                settings= {settings} />
 
                 <OutstandingDoctor  
                 settings= {settings} />
+                <MedicalFacility
+                settings= {settings} />
+                <Specialty 
+                />
+
+                 
+
+                
 
                 <AnsweredDoctor
                  settings= {settings}/>

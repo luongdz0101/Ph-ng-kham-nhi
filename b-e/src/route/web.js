@@ -47,6 +47,12 @@ let initWebRoutes = (app) => {
     router.post('/api/verify-book-app', patientController.verifyBookApp);
 
     
+    router.get('/api/count-time-type', doctorController.countTimeType);
+
+
+
+
+    
     router.get('/api/get-extra-info-by-id', doctorController.getExtraInfoById);
 
     router.post('/api/create-new-specialty', specialtyController.createNewSpecialty);

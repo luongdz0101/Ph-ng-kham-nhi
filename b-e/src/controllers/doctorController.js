@@ -165,6 +165,21 @@ let getExtraInfoById = async(req,res) => {
 }
 
 
+let countTimeType = async(req,res) => {
+  
+    try {
+        let doctors = await doctorServices.countTimeType();
+       
+        return res.status(200).json(doctors);
+    } catch (error) {
+    
+        return res.status(200).json({
+            errCode: -1,
+            message: "Error from server..."
+        })
+    }
+}
+
 module.exports = {
     getTopDoctorHome: getTopDoctorHome,
     getAllDoctor: getAllDoctor,
@@ -176,5 +191,6 @@ module.exports = {
     getListPatient: getListPatient,
     sendRemedy: sendRemedy,
     getExtraInfoById: getExtraInfoById,
+    countTimeType: countTimeType
   
 }

@@ -8,7 +8,8 @@
         "doctor-good": "Choose a doctor",
         "medical-package": "Examination package",
         "health-check": "General health check",
-        "welcome": "welcome"
+        "welcome": "welcome",
+        "booking": "Book Now"
     },
     "banner": {
         "title-one": "MEDICAL FOUNDATION",

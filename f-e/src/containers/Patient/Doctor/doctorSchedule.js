@@ -132,6 +132,7 @@ class doctorSchedule extends Component {
 
 
     handleClickScheduleTime = ( time) => {
+
         this.setState({
             isOpenModalBooking: true,
             dataScheduleTimeModal: time
@@ -150,6 +151,7 @@ class doctorSchedule extends Component {
         let{language} = this.props
         let {allDay, allTimes, isOpenModalBooking, dataScheduleTimeModal} = this.state
         
+        console.log("test: ", allTimes)
        
         return (
 

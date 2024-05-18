@@ -26,7 +26,7 @@ var postPatientBookApp = /*#__PURE__*/function () {
         case 0:
           return _context2.abrupt("return", new Promise( /*#__PURE__*/function () {
             var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(resolve, reject) {
-              var token, user;
+              var token, countBooking, user;
               return _regeneratorRuntime().wrap(function _callee$(_context) {
                 while (1) switch (_context.prev = _context.next) {
                   case 0:
@@ -39,7 +39,7 @@ var postPatientBookApp = /*#__PURE__*/function () {
                       errCode: 1,
                       errMessage: 'Missing Parameter'
                     });
-                    _context.next = 15;
+                    _context.next = 28;
                     break;
                   case 5:
                     token = (0, _uuid.v4)();
@@ -54,6 +54,15 @@ var postPatientBookApp = /*#__PURE__*/function () {
                     });
                   case 8:
                     _context.next = 10;
+                    return _index["default"].Booking.count({
+                      where: {
+                        timeType: "T1"
+                      }
+                    });
+                  case 10:
+                    countBooking = _context.sent;
+                    console.log("test count", countBooking);
+                    _context.next = 14;
                     return _index["default"].User.findOrCreate({
                       where: {
                         email: data.email
@@ -67,13 +76,13 @@ var postPatientBookApp = /*#__PURE__*/function () {
                         phoneNumber: data.phoneNumber
                       }
                     });
-                  case 10:
+                  case 14:
                     user = _context.sent;
-                    if (!(user && user[0])) {
-                      _context.next = 14;
+                    if (!(countBooking >= 3 && user && user[0])) {
+                      _context.next = 21;
                       break;
                     }
-                    _context.next = 14;
+                    _context.next = 18;
                     return _index["default"].Booking.findOrCreate({
                       where: {
                         patientId: user[0].id
@@ -87,23 +96,56 @@ var postPatientBookApp = /*#__PURE__*/function () {
                         token: token
                       }
                     });
-                  case 14:
+                  case 18:
+                    resolve({
+                      errCode: 2,
+                      errMessage: 'Tim full'
+                    });
+                    _context.next = 28;
+                    break;
+                  case 21:
+                    if (!(countBooking < 3 && user && user[0])) {
+                      _context.next = 27;
+                      break;
+                    }
+                    _context.next = 24;
+                    return _index["default"].Booking.findOrCreate({
+                      where: {
+                        patientId: user[0].id
+                      },
+                      defaults: {
+                        statusId: 'S1',
+                        doctorId: data.doctorId,
+                        patientId: user[0].id,
+                        date: data.date,
+                        timeType: data.timeType,
+                        token: token
+                      }
+                    });
+                  case 24:
                     resolve({
                       errCode: 0,
-                      errMessage: 'Post success'
+                      errMessage: 'Đặt phòng thành công'
                     });
-                  case 15:
-                    _context.next = 20;
+                    _context.next = 28;
                     break;
-                  case 17:
-                    _context.prev = 17;
+                  case 27:
+                    resolve({
+                      errCode: 1,
+                      errMessage: 'Đặt phòng thất bại'
+                    });
+                  case 28:
+                    _context.next = 33;
+                    break;
+                  case 30:
+                    _context.prev = 30;
                     _context.t0 = _context["catch"](0);
                     reject(_context.t0);
-                  case 20:
+                  case 33:
                   case "end":
                     return _context.stop();
                 }
-              }, _callee, null, [[0, 17]]);
+              }, _callee, null, [[0, 30]]);
             }));
             return function (_x2, _x3) {
               return _ref2.apply(this, arguments);

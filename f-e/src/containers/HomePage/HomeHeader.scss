@@ -24,6 +24,7 @@
             display: flex;
             justify-content: space-evenly;
             justify-items: center;
+            align-items: center;
 
             .center-content {
 
@@ -278,4 +279,14 @@
 
 
 
+}
+
+.btn-book {
+    font-weight: 400;
+    font-size: 1.4rem;
+    border-radius: 12px;
+}
+
+.slider__banner {
+    margin-top: 100px
 }

@@ -68,6 +68,8 @@ class DetaiDoctor extends Component {
             nameEn = `${detailDoctor.positionData.valueEn}, ${detailDoctor.firstName} ${detailDoctor.lastName}`;
         }
         
+        let currentDoctorId = this.state.currentDoctorId;
+
       
         return (
 
@@ -125,9 +127,13 @@ class DetaiDoctor extends Component {
                                 </div>  
                                 <div className="col l-4  m-6 c-12">
                                     <div className="container__two-right">
-                                        <DoctorExtralnfor 
-                                         doctorIdFromParent = {this.state.currentDoctorId}
+                                         
+                                       { currentDoctorId && currentDoctorId > 0 &&
+                                            <DoctorExtralnfor
+                                            doctorIdFromParent = {this.state.currentDoctorId}
                                         />
+                                       }
+                                         
                                     </div>
                                 </div>
                             </div>

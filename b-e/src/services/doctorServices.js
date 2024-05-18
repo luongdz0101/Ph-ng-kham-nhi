@@ -303,7 +303,9 @@ let  getScheduleDate= (doctorId, date) => {
                     errMessage: 'Missing Parameter'
                 })
             }else{
-               let data = await db.Schedule.findAll({
+               
+                 
+                let data = await db.Schedule.findAll({
                     where: {
                         doctorId: doctorId,
                         date: date
@@ -318,9 +320,12 @@ let  getScheduleDate= (doctorId, date) => {
                     
                 })
 
+                
+
   
 
                 if(!data) data = [];
+                
                 resolve({
                     errCode: 0,
                     data: data
@@ -552,6 +557,35 @@ let  getExtraInfoById= (inputId) => {
 }
 
 
+let  countTimeType= () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let count = await db.Booking.findAll({
+                where: {
+                    
+                }, 
+                attributes: [
+                'timeType',
+                [sequelize.fn('COUNT', sequelize.col('timeType')), 'count']
+            ],
+            group: ['timeType']
+                
+                
+                        
+            })
+            console.log(count);
+            
+            resolve({
+                errCode: 0,
+                data: count
+            })
+            
+                   
+        } catch (error) {   
+            reject(error)
+        }
+    })
+}
 module.exports = {
     getTopDoctorHome: getTopDoctorHome,
     getAllDoctor: getAllDoctor,
@@ -562,6 +596,7 @@ module.exports = {
     getProfileDoctorById: getProfileDoctorById,
     getListPatient: getListPatient,
     postSendRemedy: postSendRemedy,
-    getExtraInfoById: getExtraInfoById
+    getExtraInfoById: getExtraInfoById,
+    countTimeType: countTimeType
    
 }

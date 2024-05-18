@@ -6,10 +6,31 @@ import { FormattedMessage } from 'react-intl';
 import { changeLanguageApp } from '../../store/actions/appActions';
 import '../gird/gird.scss';
 import { withRouter } from 'react-router';
+import SliderBG from '../../components/Slider/SliderBG';
+import { getAllMedicalFacilities } from '../../services/userServices';
 
 
 class HomeHeader extends Component {
 
+
+    constructor(props){
+        super(props);
+        this.state = {
+           
+            arrMedicalFacility: [],
+     
+          
+        }
+    }
+     async componentDidMount(){
+      
+        let res = await getAllMedicalFacilities();
+        this.setState({
+            arrMedicalFacility: res.data
+        })
+
+      
+    }
     changeLanguage = (language) => {
         this.props.changeLanguageAppRedux(language)
     }
@@ -32,10 +53,19 @@ class HomeHeader extends Component {
     }
 
     
+    
+    handleViewDetailClinic = (clinic) => {
+       
+   
+       this.props.history.push(`/detail-clinic/${clinic.id}`)
+
+    }
 
     render() {
 
-       
+        let {arrMedicalFacility} = this.state
+      
+    
         let language = this.props.language;
         return (
            < React.Fragment>
@@ -78,6 +108,17 @@ class HomeHeader extends Component {
                                           
                                     </div>           
     
+
+                                    
+                                        {arrMedicalFacility && arrMedicalFacility.length > 0 && arrMedicalFacility.map((item, index) => {
+                                            return (
+                                            <div className='center-content' onClick={() => this.handleViewDetailClinic(item)}>
+                                             <button type="button" class="btn btn-book btn-primary"><FormattedMessage id ="home-header.booking"/> </button>
+                                            
+                                             </div> 
+                                                )
+                        
+                                         })}
                                          
                             </div>
                         </div>
@@ -124,7 +165,7 @@ class HomeHeader extends Component {
                 </div>
             </div> 
 
-            {this.props.isShowBanner === true && 
+            {/* {this.props.isShowBanner === true && 
                 <div className="home-header-banner">
                     <div className="header-banner__up">
                         <div className="header-banner__title-one">
@@ -183,7 +224,28 @@ class HomeHeader extends Component {
                     </div>
                 
                 </div>
-            }
+            } */}
+          
+           {this.props.isShowBanner === true && 
+                
+                        <div className="slider__banner"  
+                               
+                                >
+                                    <div className="grid wide">
+                                        <div className="row">
+                                            <div className="col l-12">
+                                                    <SliderBG />
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                        
+                         </div> 
+                 
+         
+           }
+         
+           
             </React.Fragment>
         );
     }

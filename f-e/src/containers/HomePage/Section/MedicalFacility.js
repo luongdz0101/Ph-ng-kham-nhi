@@ -87,7 +87,7 @@ class MedicalFacility extends Component {
                                 
                                 <span className='specialty-content__text'>{item.name}</span>
                             </div>
-                        </div>
+                            </div>
                            
                         )
 

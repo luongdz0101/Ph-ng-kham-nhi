@@ -39,6 +39,7 @@ var initWebRoutes = function initWebRoutes(app) {
   router.get('/api/get-list-patient-for-doctor', _doctorController["default"].getListPatient);
   router.post('/api/patient-booking-app', _patientController["default"].postPatientBookingApp);
   router.post('/api/verify-book-app', _patientController["default"].verifyBookApp);
+  router.get('/api/count-time-type', _doctorController["default"].countTimeType);
   router.get('/api/get-extra-info-by-id', _doctorController["default"].getExtraInfoById);
   router.post('/api/create-new-specialty', _specialtyController["default"].createNewSpecialty);
   router.get('/api/get-specialty-home', _specialtyController["default"].getSpecialtyHome);

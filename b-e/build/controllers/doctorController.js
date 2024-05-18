@@ -304,6 +304,35 @@ var getExtraInfoById = /*#__PURE__*/function () {
     return _ref10.apply(this, arguments);
   };
 }();
+var countTimeType = /*#__PURE__*/function () {
+  var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(req, res) {
+    var doctors;
+    return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+      while (1) switch (_context11.prev = _context11.next) {
+        case 0:
+          _context11.prev = 0;
+          _context11.next = 3;
+          return _doctorServices["default"].countTimeType();
+        case 3:
+          doctors = _context11.sent;
+          return _context11.abrupt("return", res.status(200).json(doctors));
+        case 7:
+          _context11.prev = 7;
+          _context11.t0 = _context11["catch"](0);
+          return _context11.abrupt("return", res.status(200).json({
+            errCode: -1,
+            message: "Error from server..."
+          }));
+        case 10:
+        case "end":
+          return _context11.stop();
+      }
+    }, _callee11, null, [[0, 7]]);
+  }));
+  return function countTimeType(_x21, _x22) {
+    return _ref11.apply(this, arguments);
+  };
+}();
 module.exports = {
   getTopDoctorHome: getTopDoctorHome,
   getAllDoctor: getAllDoctor,
@@ -314,5 +343,6 @@ module.exports = {
   getProfileDoctorById: getProfileDoctorById,
   getListPatient: getListPatient,
   sendRemedy: sendRemedy,
-  getExtraInfoById: getExtraInfoById
+  getExtraInfoById: getExtraInfoById,
+  countTimeType: countTimeType
 };

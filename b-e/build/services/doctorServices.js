@@ -748,6 +748,44 @@ var getExtraInfoById = function getExtraInfoById(inputId) {
     };
   }());
 };
+var countTimeType = function countTimeType() {
+  return new Promise( /*#__PURE__*/function () {
+    var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(resolve, reject) {
+      var count;
+      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+        while (1) switch (_context11.prev = _context11.next) {
+          case 0:
+            _context11.prev = 0;
+            _context11.next = 3;
+            return _index["default"].Booking.findAll({
+              where: {},
+              attributes: ['timeType', [sequelize.fn('COUNT', sequelize.col('timeType')), 'count']],
+              group: ['timeType']
+            });
+          case 3:
+            count = _context11.sent;
+            console.log(count);
+            resolve({
+              errCode: 0,
+              data: count
+            });
+            _context11.next = 11;
+            break;
+          case 8:
+            _context11.prev = 8;
+            _context11.t0 = _context11["catch"](0);
+            reject(_context11.t0);
+          case 11:
+          case "end":
+            return _context11.stop();
+        }
+      }, _callee11, null, [[0, 8]]);
+    }));
+    return function (_x21, _x22) {
+      return _ref11.apply(this, arguments);
+    };
+  }());
+};
 module.exports = {
   getTopDoctorHome: getTopDoctorHome,
   getAllDoctor: getAllDoctor,
@@ -758,5 +796,6 @@ module.exports = {
   getProfileDoctorById: getProfileDoctorById,
   getListPatient: getListPatient,
   postSendRemedy: postSendRemedy,
-  getExtraInfoById: getExtraInfoById
+  getExtraInfoById: getExtraInfoById,
+  countTimeType: countTimeType
 };
