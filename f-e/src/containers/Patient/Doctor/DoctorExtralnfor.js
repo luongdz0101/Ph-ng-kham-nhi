@@ -120,7 +120,7 @@ class DoctorExtralnfor extends Component {
                     {isShowDetailInfo === true && 
                             <div className="price-show-container">
                                 
-                                <div className="show-container-header">Sức khoẻ tâm thần</div>
+                                <div className="show-container-header">Sức khoẻ nhi khoa</div>
                                 <div className="show-container-price">Giá khám</div>
 
                                 <div className="show-container-body">

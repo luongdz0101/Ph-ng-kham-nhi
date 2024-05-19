@@ -126,7 +126,7 @@ class HomeHeader extends Component {
                           
                                 <div className="right-content">
                                     <div className="right-content-support ">
-                                        <a href="https://bookingcare.vn/hotro">
+                                        <a href="https://www.facebook.com/profile.php?id=61557782532670">
                                             <i className="fas fa-question-circle right-content-icon"></i>
                                             <span className='support-text c-0' > <FormattedMessage id ="header-banner.support"/></span>      
                                         </a>
