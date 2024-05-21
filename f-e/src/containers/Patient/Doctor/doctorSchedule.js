@@ -8,7 +8,7 @@ import { languages } from '../../../utils';
 import { getScheduleDoctor } from '../../../services/userServices';
 import BookingModal from './modal/BookingModal';
 import { FormattedMessage } from 'react-intl';
-
+import localization from 'moment/locale/vi'
 
 
 

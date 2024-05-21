@@ -23,35 +23,64 @@ const PatientAsked = (props) => {
     const handleChange = value => {
         setInputs(prevState => ({ ...prevState, [value.name] : value.value }));
     }
-
-    const getDataPatientQuestion = async() => {
-        let res = await createNewQuestion ({
-            email: inputs.email,
-            fullName: inputs.name,
-            address: inputs.address,
-            phoneNumber: inputs.phoneNumber,
-            question: textarea,
-            image: imageBase64
-        })
-
-        if(res && res.errCode === 0){
-            toast.success('Lưu thông tin chuyên khoa thành công');
-            setInputs(
-                {
-                    email: '',
-                    fullName: '',
-                    address: '',
-                    phoneNumber: '',
-                }
-            )
-            setTextarea('');
-            setPreviewImgURL('');
-            setImageBase64 ('');
-
-        }else{
-            toast.error('Lưu thông tin chuyên khoa thất bại')
-        }
+const getDataPatientQuestion = async () => {
+   
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!inputs.email || !emailPattern.test(inputs.email)) {
+        toast.error('Vui lòng nhập địa chỉ email hợp lệ!');
+        return;
     }
+
+    
+    const phoneNumberPattern = /^[0-9]{10,11}$/;
+    if (!inputs.phoneNumber || !phoneNumberPattern.test(inputs.phoneNumber)) {
+        toast.error('Vui lòng nhập số điện thoại hợp lệ!');
+        return;
+    }
+
+  
+    if (!inputs.name) {
+        toast.error('Vui lòng nhập họ tên!');
+        return;
+    }
+
+    
+    if (!inputs.address) {
+        toast.error('Vui lòng nhập địa chỉ!');
+        return;
+    }
+
+   
+    if (!textarea) {
+        toast.error('Vui lòng nhập câu hỏi!');
+        return;
+    }
+
+
+    let res = await createNewQuestion({
+        email: inputs.email,
+        fullName: inputs.name,
+        address: inputs.address,
+        phoneNumber: inputs.phoneNumber,
+        question: textarea,
+        image: imageBase64
+    });
+
+    if (res && res.errCode === 0) {
+        toast.success('Gửi câu hỏi thành công');
+        setInputs({
+            email: '',
+            fullName: '',
+            address: '',
+            phoneNumber: '',
+        });
+        setTextarea('');
+        setPreviewImgURL('');
+        setImageBase64('');
+    } else {
+        toast.error('Gửi câu hỏi thất bại');
+    }
+};
 
     const  handleOnChangeImg = async (event) => {
         let data = event.target.files;

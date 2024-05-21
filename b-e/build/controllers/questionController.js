@@ -211,6 +211,35 @@ var sendQuestion = /*#__PURE__*/function () {
     return _ref7.apply(this, arguments);
   };
 }();
+var deleteQuestion = /*#__PURE__*/function () {
+  var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(req, res) {
+    var response;
+    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
+        case 0:
+          _context8.prev = 0;
+          _context8.next = 3;
+          return _questionServices["default"].deleteQuestion(req.query.id);
+        case 3:
+          response = _context8.sent;
+          return _context8.abrupt("return", res.status(200).json(response));
+        case 7:
+          _context8.prev = 7;
+          _context8.t0 = _context8["catch"](0);
+          return _context8.abrupt("return", res.status(200).json({
+            errCode: -1,
+            message: "Error from server..."
+          }));
+        case 10:
+        case "end":
+          return _context8.stop();
+      }
+    }, _callee8, null, [[0, 7]]);
+  }));
+  return function deleteQuestion(_x15, _x16) {
+    return _ref8.apply(this, arguments);
+  };
+}();
 module.exports = {
   createNewQuestion: createNewQuestion,
   getQuestion: getQuestion,
@@ -218,5 +247,6 @@ module.exports = {
   getQuestionById: getQuestionById,
   getDoctorInfo: getDoctorInfo,
   sendQuestion: sendQuestion,
-  getReply: getReply
+  getReply: getReply,
+  deleteQuestion: deleteQuestion
 };

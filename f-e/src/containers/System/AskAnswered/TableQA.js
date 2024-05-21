@@ -1,23 +1,25 @@
 import React, { useState, useEffect  } from 'react';
-import { getQuestion, sendQuestion } from '../../../services/userServices';
+import { getQuestion, sendQuestion, deleteQuestion } from '../../../services/userServices';
 import RemedyModal from '../../Patient/Doctor/modal/RemedyModal';
+
 import {  toast } from 'react-toastify';
 
 const TableQA = (props) => {
     const [dataQuestion, setDataQuestion] = useState({});
     const[isOpenRemedy, setIsOpenRemedy] = useState(false);
-    const [dataModal, setDateModal] = useState([])
-    const [isReply, setIsReply] = useState(true)
-    const [isImg, setIsImg] = useState(false)
-  
+    const [dataModal, setDateModal] = useState([]);
+    const [isReply, setIsReply] = useState(true);
+    const [isImg, setIsImg] = useState(false);
+    const [questionId, setQuestionId] = useState(false);
+
 
     useEffect( async() => {
         
         getDataQuestion()
+
        
     }, [])
     
-
 
     const getDataQuestion = async() => {
         let res = await getQuestion ({
@@ -27,6 +29,22 @@ const TableQA = (props) => {
             setDataQuestion(res.data);
          }else{
             setDataQuestion('')
+        }
+    }
+
+    const deleteQA  = async (item) => {
+        let deleteQA = item.id;
+        
+        let res = await deleteQuestion({
+            id: deleteQA
+        });
+        if(res && res.errCode === 0){
+            await getDataQuestion();
+            toast.success('Xoá câu hỏi thành công');
+           
+           
+        }else{
+            toast.error('Xoá câu hỏi chuyên khoa thất bại')
         }
     }
 
@@ -42,9 +60,9 @@ const TableQA = (props) => {
         }
         
         setDateModal(data);
-        
         setIsOpenRemedy(true);
     }
+     
     
     const sendEmail = async(dataReply, img) => {
         
@@ -56,14 +74,6 @@ const TableQA = (props) => {
             fullName: dataModal.fullName,
             image: img
         })
-
-        console.log(img);
-
-      
-
-        
-
-    
 
         if(res && res.errCode == 0){
             setIsOpenRemedy(false)
@@ -107,7 +117,7 @@ const TableQA = (props) => {
                                         
                                          
                                                 <button type="button" 
-                                                className="btn btn-success" 
+                                                className="btn mr-2 btn-success" 
                                                 onClick={() => {
                                                     handleQA(item);
                                                 }}
@@ -115,11 +125,20 @@ const TableQA = (props) => {
                                               
                                                 >Gửi và Thêm</button>
                                         
-                                           
+                                                 <button type="button" 
+                                                className="btn   btn-danger" 
+                                                onClick={() => {
+                                                    deleteQA(item);
+                                                }}
+
+                                              
+                                                >Xoá</button>
+                                        
                                     
                                        
                         
                                        </td>
+                                       
                                        
                                                
                                    </tr>     

@@ -287,7 +287,33 @@ let  sendQuestion = (data) => {
 }
 
 
+let deleteQuestion = async (questionId) => {
+    return new Promise( async (resolve, reject) => {
+        try{
+            let question =  await db.question.findOne({
+                where: {id: questionId},
+                raw: false
+             
 
+            });
+            
+            if(question){
+                await question.destroy();
+                resolve({
+                    errCode: 0,
+                    errMessage: 'Deleted info doctor succeed! '
+                })
+            }else{
+                resolve({
+                    errCode: 2,
+                    errMessage: 'No data! '
+                })
+            }
+        }catch(error){
+            reject(error)
+        }
+    })
+ }
 module.exports = {
     createNewQuestion: createNewQuestion,
     getQuestion: getQuestion,
@@ -295,6 +321,7 @@ module.exports = {
     getQuestionById: getQuestionById,
     getDoctorInfo: getDoctorInfo,
     sendQuestion: sendQuestion,
-    getReply: getReply
+    getReply: getReply,
+    deleteQuestion: deleteQuestion
     
 }

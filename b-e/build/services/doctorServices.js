@@ -751,35 +751,49 @@ var getExtraInfoById = function getExtraInfoById(inputId) {
 var countTimeType = function countTimeType() {
   return new Promise( /*#__PURE__*/function () {
     var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(resolve, reject) {
-      var count;
+      var timeTypes, counts, _i, _timeTypes, timeType, countBooking;
       return _regeneratorRuntime().wrap(function _callee11$(_context11) {
         while (1) switch (_context11.prev = _context11.next) {
           case 0:
             _context11.prev = 0;
-            _context11.next = 3;
-            return _index["default"].Booking.findAll({
-              where: {},
-              attributes: ['timeType', [sequelize.fn('COUNT', sequelize.col('timeType')), 'count']],
-              group: ['timeType']
+            timeTypes = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8'];
+            counts = {};
+            _i = 0, _timeTypes = timeTypes;
+          case 4:
+            if (!(_i < _timeTypes.length)) {
+              _context11.next = 13;
+              break;
+            }
+            timeType = _timeTypes[_i];
+            _context11.next = 8;
+            return _index["default"].Booking.count({
+              where: {
+                timeType: timeType
+              }
             });
-          case 3:
-            count = _context11.sent;
-            console.log(count);
+          case 8:
+            countBooking = _context11.sent;
+            counts[timeType] = countBooking;
+          case 10:
+            _i++;
+            _context11.next = 4;
+            break;
+          case 13:
             resolve({
               errCode: 0,
-              data: count
+              data: counts
             });
-            _context11.next = 11;
+            _context11.next = 19;
             break;
-          case 8:
-            _context11.prev = 8;
+          case 16:
+            _context11.prev = 16;
             _context11.t0 = _context11["catch"](0);
             reject(_context11.t0);
-          case 11:
+          case 19:
           case "end":
             return _context11.stop();
         }
-      }, _callee11, null, [[0, 8]]);
+      }, _callee11, null, [[0, 16]]);
     }));
     return function (_x21, _x22) {
       return _ref11.apply(this, arguments);

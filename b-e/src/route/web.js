@@ -48,11 +48,6 @@ let initWebRoutes = (app) => {
 
     
     router.get('/api/count-time-type', doctorController.countTimeType);
-
-
-
-
-    
     router.get('/api/get-extra-info-by-id', doctorController.getExtraInfoById);
 
     router.post('/api/create-new-specialty', specialtyController.createNewSpecialty);
@@ -76,6 +71,8 @@ let initWebRoutes = (app) => {
     router.get('/api/doctor-info', questionController.getDoctorInfo);
     router.get('/api/get-reply', questionController.getReply);
     router.post('/api/send-question', questionController.sendQuestion);
+    router.delete('/api/delete-question', questionController.deleteQuestion);
+
 
     // router.post('/api/create-new-patient-question', questionController.createNewPatientQuestion);
 

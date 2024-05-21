@@ -423,6 +423,72 @@ var sendQuestion = function sendQuestion(data) {
     };
   }());
 };
+var deleteQuestion = /*#__PURE__*/function () {
+  var _ref10 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(questionId) {
+    return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+      while (1) switch (_context11.prev = _context11.next) {
+        case 0:
+          return _context11.abrupt("return", new Promise( /*#__PURE__*/function () {
+            var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(resolve, reject) {
+              var question;
+              return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+                while (1) switch (_context10.prev = _context10.next) {
+                  case 0:
+                    _context10.prev = 0;
+                    _context10.next = 3;
+                    return _index["default"].question.findOne({
+                      where: {
+                        id: questionId
+                      },
+                      raw: false
+                    });
+                  case 3:
+                    question = _context10.sent;
+                    if (!question) {
+                      _context10.next = 10;
+                      break;
+                    }
+                    _context10.next = 7;
+                    return question.destroy();
+                  case 7:
+                    resolve({
+                      errCode: 0,
+                      errMessage: 'Deleted info doctor succeed! '
+                    });
+                    _context10.next = 11;
+                    break;
+                  case 10:
+                    resolve({
+                      errCode: 2,
+                      errMessage: 'No data! '
+                    });
+                  case 11:
+                    _context10.next = 16;
+                    break;
+                  case 13:
+                    _context10.prev = 13;
+                    _context10.t0 = _context10["catch"](0);
+                    reject(_context10.t0);
+                  case 16:
+                  case "end":
+                    return _context10.stop();
+                }
+              }, _callee10, null, [[0, 13]]);
+            }));
+            return function (_x18, _x19) {
+              return _ref11.apply(this, arguments);
+            };
+          }()));
+        case 1:
+        case "end":
+          return _context11.stop();
+      }
+    }, _callee11);
+  }));
+  return function deleteQuestion(_x17) {
+    return _ref10.apply(this, arguments);
+  };
+}();
 module.exports = {
   createNewQuestion: createNewQuestion,
   getQuestion: getQuestion,
@@ -430,5 +496,6 @@ module.exports = {
   getQuestionById: getQuestionById,
   getDoctorInfo: getDoctorInfo,
   sendQuestion: sendQuestion,
-  getReply: getReply
+  getReply: getReply,
+  deleteQuestion: deleteQuestion
 };

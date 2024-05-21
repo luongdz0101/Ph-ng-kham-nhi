@@ -37,50 +37,33 @@ let  postPatientBookApp = async(data) => {
 
                 let countBooking = await db.Booking.count({
                     where: {
-                        timeType: "T1"
+                        timeType: data.timeType,
+                        date: data.date
                     }, 
                         
                  })
-                 console.log("test count",countBooking)
+        
 
-                let user = await db.User.findOrCreate({
-                    where: {
-                        email: data.email
-                    },
-                    defaults: {
-                        email: data.email,
-                        roleID: 'R3',
-                        gender: data.gender,
-                        firstName: data.fullName,
-                        address: data.address,
-                        phoneNumber: data.phoneNumber
-                    }
-                })
-
-                if(countBooking >= 3 && user && user[0]){
-                    await db.Booking.findOrCreate({
-
-                        where: {
-                            patientId: user[0].id
-                        },
-                        defaults: {
-                            statusId: 'S1',
-                            doctorId: data.doctorId,
-                            patientId: user[0].id,
-                            date: data.date,
-                            timeType: data.timeType,
-                            token: token
-                        }
-  
-                        
-                    })
+                if(countBooking >= 3 ){
                     resolve({
                         errCode: 2,
                         errMessage: 'Tim full'
                     })
-                } else if(countBooking < 3 && user && user[0]){
+                } else if(countBooking < 3 ){
+                    let user = await db.User.findOrCreate({
+                                        where: {
+                                            email: data.email
+                                        },
+                                        defaults: {
+                                            email: data.email,
+                                            roleID: 'R3',
+                                            gender: data.gender,
+                                            firstName: data.fullName,
+                                            address: data.address,
+                                            phoneNumber: data.phoneNumber
+                                        }
+                                    })
                     await db.Booking.findOrCreate({
-
                         where: {
                             patientId: user[0].id
                         },

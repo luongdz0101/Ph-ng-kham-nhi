@@ -102,6 +102,19 @@ let sendQuestion = async(req,res) => {
 
 }
 
+let deleteQuestion = async(req,res) => {
+  
+    try {
+        let response = await questionServices.deleteQuestion(req.query.id);
+        return res.status(200).json(response);
+    } catch (error) {
+    
+        return res.status(200).json({
+            errCode: -1,
+            message: "Error from server..."
+        })
+    }
+}
 
 
 module.exports = {
@@ -111,5 +124,6 @@ module.exports = {
     getQuestionById: getQuestionById,
     getDoctorInfo: getDoctorInfo,
     sendQuestion: sendQuestion,
-    getReply: getReply
+    getReply: getReply,
+    deleteQuestion: deleteQuestion
 }

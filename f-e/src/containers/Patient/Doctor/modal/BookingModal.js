@@ -102,6 +102,33 @@ class BookingModal extends Component {
         }
     
         handleConfirmBooking = async() => {
+        if (!this.state.fullName || !this.state.phoneNumber || !this.state.email || !this.state.address || !this.state.reason || !this.state.birthday || !this.state.gender) {
+
+         alert("Vui lòng điền đầy đủ thông tin!");
+        return;
+        }
+        
+ 
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(this.state.email)) {
+            alert("Vui lòng nhập địa chỉ email hợp lệ!");
+            return;
+        }
+        
+        
+        const phoneNumberPattern = /^[0-9]{10,11}$/;
+        if (!phoneNumberPattern.test(this.state.phoneNumber)) {
+            alert("Vui lòng nhập số điện thoại hợp lệ!");
+            return;
+        }
+
+        const birthday = new Date(this.state.birthday);
+        const today = new Date();
+        if (birthday >= today) {
+            alert("Vui lòng chọn ngày sinh hợp lệ!");
+            return;
+        }
+
             this.setState({
                 isShowLoading: true
             })

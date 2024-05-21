@@ -58,6 +58,7 @@ var initWebRoutes = function initWebRoutes(app) {
   router.get('/api/doctor-info', _questionController["default"].getDoctorInfo);
   router.get('/api/get-reply', _questionController["default"].getReply);
   router.post('/api/send-question', _questionController["default"].sendQuestion);
+  router["delete"]('/api/delete-question', _questionController["default"].deleteQuestion);
 
   // router.post('/api/create-new-patient-question', questionController.createNewPatientQuestion);
 

@@ -147,7 +147,9 @@ const getReply = (data) => {
 }
 
 
-
+const deleteQuestion = (data) => {
+    return axios.delete(`/api/delete-question?id=${data.id}`);
+}
 
 
 
@@ -186,5 +188,6 @@ export {
     deleteMedicalFacilities,
     createNewQuestion,
     sendQuestion,
-    getReply
+    getReply,
+    deleteQuestion
 };

@@ -165,14 +165,14 @@ class UserManage extends Component {
                                                 onClick={() => {
                                                     this.handleEditUser(item);
                                                 }}
-                                                >Edit</button>
+                                                >Sửa</button>
                                                 <button type="button" 
                                                 className="btn btn-danger"
                                                 style={{marginRight: 10, paddingRight:10 , paddingLeft: 10}}
                                                 onClick={() => {
                                                     this.handleDeleteUser(item);
                                                 }}
-                                                >Delete</button>
+                                                >Xoá</button>
                                             </td>
                                             
                                         </tr>

@@ -557,35 +557,31 @@ let  getExtraInfoById= (inputId) => {
 }
 
 
-let  countTimeType= () => {
+let countTimeType = () => {
     return new Promise(async (resolve, reject) => {
         try {
-            let count = await db.Booking.findAll({
-                where: {
-                    
-                }, 
-                attributes: [
-                'timeType',
-                [sequelize.fn('COUNT', sequelize.col('timeType')), 'count']
-            ],
-            group: ['timeType']
-                
-                
-                        
-            })
-            console.log(count);
-            
+            const timeTypes = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8'];
+            const counts = {};
+
+            for (const timeType of timeTypes) {
+                let countBooking = await db.Booking.count({
+                    where: {
+                        timeType: timeType
+                    }
+                });
+                counts[timeType] = countBooking;
+            }
+
             resolve({
                 errCode: 0,
-                data: count
-            })
-            
-                   
-        } catch (error) {   
-            reject(error)
+                data: counts
+            });
+        } catch (error) {
+            reject(error);
         }
-    })
+    });
 }
+
 module.exports = {
     getTopDoctorHome: getTopDoctorHome,
     getAllDoctor: getAllDoctor,
