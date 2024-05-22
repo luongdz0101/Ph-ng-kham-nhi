@@ -108,8 +108,6 @@ class HomeHeader extends Component {
                                           
                                     </div>           
     
-
-                                    
                                         {arrMedicalFacility && arrMedicalFacility.length > 0 && arrMedicalFacility.map((item, index) => {
                                             return (
                                             <div className='center-content' onClick={() => this.handleViewDetailClinic(item)}>
