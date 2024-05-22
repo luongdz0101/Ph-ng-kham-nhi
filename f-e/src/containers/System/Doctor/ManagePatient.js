@@ -123,15 +123,18 @@ class ManagePatient extends Component {
 
         if(res && res.errCode == 0){
             this.setState({
-                isShowLoading: false
+                isShowLoading: false,
+                isOpenRemedy: false
             })
             toast.success('Gửi thông tin khám bệnh thành công')
             await this.getDataPatient();
+
            
             
         }else{
             this.setState({
-                isShowLoading: false
+                isShowLoading: false,
+                isOpenRemedy: false
             })
             toast.error('Gửi thông tin khám bệnh thất bại')
         }

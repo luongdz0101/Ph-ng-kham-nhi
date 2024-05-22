@@ -86,6 +86,9 @@ class RemedyModal extends Component {
 
     handleSendRemedy = () => {
         this.props.sendRemedy(this.state);
+        this.setState({
+            isOpenModal: false,
+        })
        
     }
 
@@ -93,7 +96,7 @@ class RemedyModal extends Component {
         let dataReply = this.state.reply;
         let img = this.state.imageBase64;
          this.props.sendEmail(dataReply, img);
-         
+      
         
      }
     render() {
