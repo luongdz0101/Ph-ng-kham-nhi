@@ -86,7 +86,7 @@ var getMedicalFacilities = function getMedicalFacilities() {
             _data = _context3.sent;
             if (_data && _data.length > 0) {
               _data.map(function (item) {
-                item.image = new Buffer(item.image, 'base64').toString('binary');
+                item.image = Buffer.from(item.image, 'base64').toString('binary');
                 return item;
               });
             }
@@ -162,7 +162,7 @@ var getMedicalFacilitiesById = function getMedicalFacilitiesById(inputId) {
             _data2 = {};
           case 17:
             if (_data2 && _data2.image) {
-              _data2.image = new Buffer(_data2.image, 'base64').toString('binary');
+              _data2.image = Buffer.from(_data2.image, 'base64').toString('binary');
             }
             if (!_data2) _data2 = {};
             resolve({

@@ -318,7 +318,7 @@ var getDoctorById = function getDoctorById(inputId) {
           case 7:
             data = _context4.sent;
             if (data && data.image) {
-              data.image = new Buffer(data.image, 'base64').toString('binary');
+              data.image = Buffer.from(data.image, 'base64').toString('binary');
             }
             if (!data) data = {};
             resolve({
@@ -525,7 +525,7 @@ var getProfileDoctorById = function getProfileDoctorById(inputId) {
           case 7:
             data = _context7.sent;
             if (data && data.image) {
-              data.image = new Buffer(data.image, 'base64').toString('binary');
+              data.image = Buffer.from(data.image, 'base64').toString('binary');
             }
             if (!data) data = {};
             resolve({

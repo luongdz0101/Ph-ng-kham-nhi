@@ -85,7 +85,7 @@ var getSpecialtyHome = function getSpecialtyHome() {
             _data = _context3.sent;
             if (_data && _data.length > 0) {
               _data.map(function (item) {
-                item.image = new Buffer(item.image, 'base64').toString('binary');
+                item.image = Buffer.from(item.image, 'base64').toString('binary');
                 return item;
               });
             }

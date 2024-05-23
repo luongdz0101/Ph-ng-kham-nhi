@@ -85,7 +85,7 @@ var getQuestion = function getQuestion() {
             data = _context3.sent;
             if (data && data.length > 0) {
               data.map(function (item) {
-                item.image = new Buffer(item.image, 'base64').toString('binary');
+                item.image = Buffer.from(item.image, 'base64').toString('binary');
                 return item;
               });
             }
@@ -130,7 +130,7 @@ var getReply = function getReply() {
             data = _context4.sent;
             if (data && data.length > 0) {
               data.map(function (item) {
-                item.image = new Buffer(item.image, 'base64').toString('binary');
+                item.image = Buffer.from(item.image, 'base64').toString('binary');
                 return item;
               });
             }
@@ -210,7 +210,7 @@ var search = /*#__PURE__*/function () {
                   case 15:
                     if (data && data.length > 0) {
                       data.map(function (item) {
-                        item.image = new Buffer(item.image, 'base64').toString('binary');
+                        item.image = Buffer.from(item.image, 'base64').toString('binary');
                         return item;
                       });
                     }
@@ -275,7 +275,7 @@ var getQuestionById = function getQuestionById(id) {
           case 7:
             data = _context7.sent;
             if (data && data.image) {
-              data.image = new Buffer(data.image, 'base64').toString('binary');
+              data.image = Buffer.from(data.image, 'base64').toString('binary');
             }
             if (!data) data = {};
             resolve({

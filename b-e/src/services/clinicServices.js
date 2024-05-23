@@ -48,7 +48,7 @@ let  getMedicalFacilities= () => {
 
             if(data && data.length > 0){
                     data.map(item => {
-                        item.image =  new Buffer(item.image, 'base64').toString('binary')
+                        item.image =  Buffer.from(item.image, 'base64').toString('binary')
                         return item;
                     })
             }
@@ -99,7 +99,7 @@ let  getMedicalFacilitiesById= (inputId) => {
                     }else data = {}
 
                     if(data && data.image){
-                        data.image =  new Buffer(data.image, 'base64'). toString('binary')
+                        data.image =  Buffer.from(data.image, 'base64'). toString('binary')
                     }
                     if(!data) data = {};
 
